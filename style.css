@@ -170,7 +170,7 @@ h4 {
 
 .gallery-grid img {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -759,7 +759,7 @@ h4 {
 .apply-image {
   width: 100%;
   height: 400px;
-  object-fit: contain; 
+  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -817,5 +817,147 @@ h4 {
   .registration-btn,
   .events-btn {
     margin-bottom: 10px;
+  }
+  .contact-details p {
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+}
+
+/* media query */
+/* Mobile Devices Specific Media Query (Max-width: 480px) */
+@media (max-width: 480px) {
+  /***** General Mobile Styles *****/
+  body {
+    font-size: 14px; /* Slightly smaller base font size */
+  }
+
+  /***** Header Styles *****/
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    width: 100px; /* Smaller logo */
+  }
+
+  .header h1 {
+    font-size: 1.8rem; /* Reduced heading size */
+    text-align: center;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /***** Navigation Styles *****/
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /***** Section Styles *****/
+  .section {
+    padding: 40px 15px; /* Reduced padding */
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  /***** Grid Layouts *****/
+  .gallery-grid,
+  .achievement-cards,
+  .goals-grid,
+  .video-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px;
+  }
+
+  /***** Recruitment Styles *****/
+  .recruitment-content {
+    grid-template-columns: 1fr; /* Stack vertically */
+    gap: 20px;
+  }
+
+  .recruitment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /***** Form Styles *****/
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  /***** Footer Styles *****/
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /***** Action Buttons *****/
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /***** Video Section *****/
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /***** Typography Adjustments *****/
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  /***** Spacing Adjustments *****/
+  .container {
+    padding: 0 10px;
+  }
+
+  /***** Card Styles *****/
+  .achievement-card,
+  .goal-card,
+  .recruitment-card {
+    padding: 20px;
   }
 }
