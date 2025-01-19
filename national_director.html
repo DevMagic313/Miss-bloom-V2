@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="National Director Agreement - Miss Bloom Global">
+    <title>National Director Agreement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FF1493;
+            --secondary-color: #FF69B4;
+            --accent-color: #FFC0CB;
+            --gradient-1: linear-gradient(135deg, #FF1493, #FF69B4);
+            --gradient-2: linear-gradient(135deg, #FF69B4, #FFC0CB);
+            --text-color: #2C3E50;
+            --heading-font: 'Cormorant Garamond', serif;
+            --body-font: 'Quicksand', sans-serif;
+            --shadow-1: 0 10px 30px rgba(255, 20, 147, 0.1);
+            --shadow-2: 0 15px 35px rgba(255, 20, 147, 0.2);
+        }
+
+        body {
+            font-family: var(--body-font);
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FFF5F6, #FFF0F5);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            box-shadow: var(--shadow-1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before,
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .container::before {
+            top: -100px;
+            left: -100px;
+        }
+
+        .container::after {
+            bottom: -100px;
+            right: -100px;
+        }
+
+        h2 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            text-align: center;
+            letter-spacing: 1px;
+            font-size: 3em;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .agreement-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .agreement-section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .agreement-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .agreement-section:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2);
+        }
+
+        .agreement-section:hover::before {
+            transform: scaleX(1);
+        }
+
+        .agreement-section h4 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            color: var(--primary-color);
+            font-family: var(--heading-font);
+        }
+
+        .agreement-section h4 i {
+            font-size: 1.2em;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .agreement-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .agreement-section li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(255, 240, 245, 0.5);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .agreement-section li i {
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+
+        .back-button {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .back-button a {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--gradient-1);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+        }
+
+        .back-button a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                margin: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2.5em;
+            }
+            .agreement-section {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 20px 15px;
+                margin: 10px;
+            }
+            .agreement-section h4 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="director-agreement" class="section">
+        <div class="container">
+            <h2>National Director Agreement</h2>
+
+            <div class="agreement-sections">
+                <div class="agreement-section">
+                    <h4><i class="fas fa-file-signature"></i> Terms and Conditions</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> The National Director agrees to promote and represent Miss Bloom Global in their designated country.</li>
+                        <li><i class="fas fa-check-circle"></i> The National Director will adhere to the rules, regulations, and guidelines set forth by Miss Bloom Global.</li>
+                    </ul>
+                </div>
+
+                <div class="agreement-section">
+                    <h4><i class="fas fa-user-shield"></i> Confidentiality and Non-Disclosure</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> The National Director agrees to maintain confidentiality and protect sensitive information related to Miss Bloom Global.</li>
+                    </ul>
+                </div>
+
+                <div class="agreement-section">
+                    <h4><i class="fas fa-map-marked-alt"></i> Territorial Rights</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> The National Director will have exclusive rights to promote Miss Bloom Global in their designated country.</li>
+                    </ul>
+                </div>
+
+                <div class="agreement-section">
+                    <h4><i class="fas fa-hand-holding-usd"></i> Payment Terms</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> The National Director will receive percentage or amount of revenue generated from their country.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="back-button">
+                <a href="index.html">Return to Homepage</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
