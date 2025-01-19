@@ -6,9 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize smooth scrolling
   initSmoothScroll();
 
-  // Initialize form validation
-  initFormValidation();
-
   // Initialize image gallery
   initGallery();
 
@@ -63,94 +60,6 @@ function initSmoothScroll() {
       }
     });
   });
-}
-
-// Form Validation and Interactive Feedback
-function initFormValidation() {
-  const forms = document.querySelectorAll("form");
-
-  forms.forEach((form) => {
-    const inputs = form.querySelectorAll("input, textarea");
-
-    inputs.forEach((input) => {
-      // Add floating label effect
-      input.addEventListener("focus", () => {
-        input.parentElement.classList.add("focused");
-      });
-
-      input.addEventListener("blur", () => {
-        if (!input.value) {
-          input.parentElement.classList.remove("focused");
-        }
-      });
-
-      // Real-time validation
-      input.addEventListener("input", validateInput);
-    });
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      if (validateForm(form)) {
-        showLoadingState(form);
-
-        try {
-          // Simulate form submission
-          await new Promise((resolve) => setTimeout(resolve, 1500));
-          showSuccessMessage(form);
-          form.reset();
-        } catch (error) {
-          showErrorMessage(form);
-        }
-      }
-    });
-  });
-}
-
-function validateInput(e) {
-  const input = e.target;
-  const value = input.value;
-  const type = input.type;
-
-  let isValid = true;
-  let errorMessage = "";
-
-  switch (type) {
-    case "email":
-      isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-      errorMessage = "Please enter a valid email address";
-      break;
-    case "tel":
-      isValid = /^\+?[\d\s-]{10,}$/.test(value);
-      errorMessage = "Please enter a valid phone number";
-      break;
-    case "number":
-      if (input.placeholder.toLowerCase().includes("age")) {
-        isValid = value >= 18 && value <= 28;
-        errorMessage = "Age must be between 18 and 28";
-      }
-      break;
-  }
-
-  updateValidationUI(input, isValid, errorMessage);
-  return isValid;
-}
-
-function updateValidationUI(input, isValid, errorMessage) {
-  const container = input.parentElement;
-  container.classList.toggle("invalid", !isValid);
-
-  let errorElement = container.querySelector(".error-message");
-  if (!isValid) {
-    if (!errorElement) {
-      errorElement = document.createElement("span");
-      errorElement.className = "error-message";
-      container.appendChild(errorElement);
-    }
-    errorElement.textContent = errorMessage;
-  } else if (errorElement) {
-    errorElement.remove();
-  }
 }
 
 // Gallery Functionality
@@ -261,40 +170,4 @@ function initAnimations() {
   }, observerOptions);
 
   elements.forEach((element) => observer.observe(element));
-}
-
-// Helper Functions
-function showLoadingState(form) {
-  const submitBtn = form.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-}
-
-function showSuccessMessage(form) {
-  const message = document.createElement("div");
-  message.className = "success-message";
-  message.innerHTML =
-    '<i class="fas fa-check-circle"></i> Form submitted successfully!';
-  form.appendChild(message);
-
-  setTimeout(() => {
-    message.remove();
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = false;
-  }, 3000);
-}
-
-function showErrorMessage(form) {
-  const message = document.createElement("div");
-  message.className = "error-message";
-  message.innerHTML =
-    '<i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again.';
-  form.appendChild(message);
-
-  setTimeout(() => {
-    message.remove();
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Submit Application";
-  }, 3000);
 }
