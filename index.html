@@ -176,40 +176,29 @@
         <a href="pre_pageant_event.html" class="btn events-btn">Pre-Pageant Events</a>
          <a href="national_director.html" class="btn events-btn">National Director Agreement</a>
     </div>
-</div>
-
-        <!-- Contestant Application Form -->
-       <div class="contestant-recruitment">
-  <h3>Contestant Application</h3>
-  <div class="application-form">
-    <form id="recruitmentForm" action="https://api.web3forms.com/submit" method="POST">
-      <div class="form-group">
-        <input type="hidden" name="access_key" value="d4f8fc91-38ff-4054-9540-7d8325b7137c">
-        <label for="fullName">Full Name:</label>
-        <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
-      </div>
-      <div class="form-group">
-        <label for="emailAddress">Email Address:</label>
-        <input type="email" id="emailAddress" name="emailAddress" placeholder="Email Address" required>
-      </div>
-      <div class="form-group">
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required>
-      </div>
-      <div class="form-group">
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" placeholder="Age" required>
-      </div>
-      <div class="form-group">
-        <label for="aboutYourself">Tell us about yourself:</label>
-        <textarea id="aboutYourself" name="aboutYourself" placeholder="Tell us about yourself" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Submit Application</button>
-    </form>
-  </div>
-</div>
+</div>        
 </section>
+<section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Us!</span></h2>
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- Replace with your Web3Forms access key -->
+        <input type="hidden" name="access_key" value="d4f8fc91-38ff-4054-9540-7d8325b7137c">
+        
+        <div class="input-box">
+            <input type="text" name="full_name" placeholder="Full Name" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+        </div>
 
+        <div class="input-box">
+            <input type="number" name="phone" placeholder="Phone Number" required />
+            <input type="text" name="subject" placeholder="Email Subject" required />
+        </div>
+
+        <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+
+        <input type="submit" class="btn" value="Send Message" />
+    </form>
+</section>
 <!-- Rest of the code remains the same -->
 
     <section id="videos" class="section videos" data-aos="fade-up">
