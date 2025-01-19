@@ -179,31 +179,35 @@
 </div>
 
         <!-- Contestant Application Form -->
-        <div class="contestant-recruitment">
-            <h3>Contestant Application</h3>
-            <div class="application-form">
-                <form id ="recruitmentForm" action="https://api.web3forms.com/submit" method="POST">
-                     <input type="hidden" name="access_key" value="d4f8fc91-38ff-4054-9540-7d8325b7137c">
-                    <div class="form-group">
-                        <input type="text" placeholder="Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Phone Number" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" placeholder="Age" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Tell us about yourself" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Submit Application</button>
-                </form>
-            </div>
-        </div>
-    </div>
+       <div class="contestant-recruitment">
+  <h3>Contestant Application</h3>
+  <div class="application-form">
+    <form id="recruitmentForm" action="https://api.web3forms.com/submit" method="POST">
+      <div class="form-group">
+        <input type="hidden" name="access_key" value="d4f8fc91-38ff-4054-9540-7d8325b7137c">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+      </div>
+      <div class="form-group">
+        <label for="emailAddress">Email Address:</label>
+        <input type="email" id="emailAddress" name="emailAddress" placeholder="Email Address" required>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required>
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Age" required>
+      </div>
+      <div class="form-group">
+        <label for="aboutYourself">Tell us about yourself:</label>
+        <textarea id="aboutYourself" name="aboutYourself" placeholder="Tell us about yourself" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </div>
+</div>
 </section>
 
 <!-- Rest of the code remains the same -->
