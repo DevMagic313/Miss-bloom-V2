@@ -281,7 +281,6 @@ function showSuccessMessage(form) {
     message.remove();
     const submitBtn = form.querySelector('button[type="submit"]');
     submitBtn.disabled = false;
-    submitBtn.textContent = "Submit Application";
   }, 3000);
 }
 
