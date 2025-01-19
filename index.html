@@ -6,6 +6,7 @@
     <meta name="description" content="Miss Bloom Global is a platform that empowers women worldwide through beauty pageants, education, and cultural exchange. Learn more about our mission, vision, and achievements.">
     <title>Miss Bloom Global | Empowering Women Worldwide</title>
     <link rel="stylesheet" href="style.css">
+
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -173,15 +174,16 @@
     <div class="action-buttons">
         <a href="registration_fee.html" class="btn registration-btn">Registration Fee</a>
         <a href="pre_pageant_event.html" class="btn events-btn">Pre-Pageant Events</a>
-        <a href="national_director.html" class="btn events-btn">National Director Agreement</a>
+         <a href="national_director.html" class="btn events-btn">National Director Agreement</a>
     </div>
 </div>
 
         <!-- Contestant Application Form -->
-        <!-- <div class="contestant-recruitment">
+        <div class="contestant-recruitment">
             <h3>Contestant Application</h3>
             <div class="application-form">
-                <form id="recruitmentForm">
+                <form id ="recruitmentForm" action="https://api.web3forms.com/submit" method="POST">
+                     <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                     <div class="form-group">
                         <input type="text" placeholder="Full Name" required>
                     </div>
@@ -200,7 +202,7 @@
                     <button type="submit" class="submit-btn">Submit Application</button>
                 </form>
             </div>
-        </div> -->
+        </div>
     </div>
 </section>
 
